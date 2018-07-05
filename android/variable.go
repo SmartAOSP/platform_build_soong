@@ -94,6 +94,9 @@ type variableProperties struct {
 		Pdk struct {
 			Enabled *bool
 		}
+		Needs_platform_textrels struct {
+			Cppflags []string
+		}
 	} `android:"arch_variant"`
 }
 
@@ -167,6 +170,8 @@ type productVariables struct {
 	Override_rs_driver *string `json:",omitempty"`
 
 	DeviceKernelHeaders []string `json:",omitempty"`
+
+	Needs_platform_textrels *bool `json:",omitempty"`
 }
 
 func boolPtr(v bool) *bool {
